@@ -20,33 +20,36 @@
             <thead>
                 <tr class="table-success">
                     <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Body</th>
+                    <th scope="col">Judul</th>
+                    <th scope="col">Halaman</th>
+                    <th scope="col">kategori</th>
+                    <th scope="col">Penerbit</th>
                     <th scope="col">Created At</th>
                     <th scope="col">Updated At</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($articles as $article)
+                @forelse ($books as $book)
                     <tr>
-                        <th scope="row">{{ $article->id }}</th>
-                        <td><a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a></td>
-                        <td>{{ Str::limit($article->body, 50, '...') }}</td>
-                        <td>{{ $article->created_at }}</td>
-                        <td>{{ $article->updated_at }}</td>
+                        <th scope="row">{{ $book->id }}</th>
+                        <td><a href="{{ route('book.show', $book) }}">{{ $book->title }}</a></td>
+                        <td>{{ Str::limit($book->body, 50, '...') }}</td>
+                        <td>{{ $book->created_at }}</td>
+                        <td>{{ $book->updated_at }}</td>
                         <td>
-                            <a href="{{route('articles.edit',$article)}}" class="btn btn-primary btn-sm">Edit</a>
-                            <form action="{{route('articles.destroy',$article)}}" method="POST" class="d-inline-block">
+                            <a href="{{ route('book.edit', $book) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('book.destroy', $book) }}" method="POST" class="d-inline-block">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Are you sure?')">Delete</button>
                             </form>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5">No Articles found.</Article>
+                        <td colspan="5">No Book found.</Article>
                         </td>
                     </tr>
                 @endforelse

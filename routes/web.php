@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', LandingController::class);
+// Route::get('/', LandingController::class);
 
-route::resource('Books', BooksController::class);
+Route::resource('articles', ArticleController::class);
 
 Route::get('/', LandingController::class)->name('landing');

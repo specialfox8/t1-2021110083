@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class BookSeeder extends Seeder
+class ArticleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +16,10 @@ class BookSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 25; $i++) {
-            $id=$faker-> sentence(13);
+            $id = $faker->sentence(13);
             $judul = $faker->sentence(6);
-            $halaman = $faker->(800, 600, 'cats', true, 'Faker');
-            $kategori = $faker->paragraph(20);
+            $halaman = $faker->sentence();
+            $kategori = $faker->sentence('uncategorized');
             $penerbit = $faker->numberBetween(0, 10000000);
             $creared_at = $faker->dateTimeBetween('-9 months');
 

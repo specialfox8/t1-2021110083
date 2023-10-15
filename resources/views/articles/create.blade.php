@@ -27,25 +27,31 @@
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="page" class="form-label">Halaman</label>
-                    <input class="form-control" type="file" id="page" name="page">
+                    <input class="form-control" type="text" id="page" name="page">
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
-                    <select>
-                        <option value="uncategorized">Uncategorized</option>
-                        <option value="sci-fi">Science Fiction</option>
-                        <option value="novel">Novel</option>
-                        <option value="history">History</option>
-                        <option value="biography">Biography</option>
-                        <option value="romance">Romance</option>
-                        <option value="education">Education</option>
-                        <option value="culinary">Culinary</option>
-                        <option value="comic">Comic</option>
-                      </select>
-                    </div>
-                <div class="form-check form-switch mb-3">
-                    <label class="form-check-label" for="is_published">Publish?</label>
-                    <input class="form-check-input" type="checkbox" id="is_published" name="is_published">
+                    <form method="post">
+                        <label for="kategori">Kategori</label>
+                        <select name="kategori" id="kategori">
+                            <option value="uncategorized">Uncategorized</option>
+                            <option value="sci-fi">Science Fiction</option>
+                            <option value="novel">Novel</option>
+                            <option value="history">History</option>
+                            <option value="biography">Biography</option>
+                            <option value="romance">Romance</option>
+                            <option value="education">Education</option>
+                            <option value="culinary">Culinary</option>
+                            <option value="comic">Comic</option>
+                        </select>
+
+                    </form>
+
                 </div>
+                <div class="mb-3 col-md-12 col-sm-12">
+                    <label for="penerbit" class="form-label">Penerbit</label>
+                    <input type="text" class="form-control" id="penerbit" name="penerbit">
+                </div>
+
                 <button type="submit" class="btn btn-primary btn-block">Save</button>
             </form>
         </div>

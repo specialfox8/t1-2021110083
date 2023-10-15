@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="mt-4 p-5 bg-black text-white rounded">
-        <h1>Update Book</h1>
+        <h1>Update Article</h1>
     </div>
 
     @if ($errors->any())
@@ -19,18 +19,19 @@
 
     <div class="row my-5">
         <div class="col-12 px-5">
-            <form action="{{ route('articles.update',$article) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('articles.update', $article) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title',$article->title) }}">
+                    <input type="text" class="form-control" id="title" name="title"
+                        value="{{ old('title', $article->title) }}">
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="image" class="form-label">Image</label>
                     <input class="form-control" type="file" id="image" name="image">
                     @if ($article->image)
-                        <img src="{{$article->image_url}}" class="mt-3" style="max-width: 400px">
+                        <img src="{{ $article->image_url }}" class="mt-3" style="max-width: 400px">
                     @endif
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
@@ -39,7 +40,8 @@
                 </div>
                 <div class="form-check form-switch mb-3">
                     <label class="form-check-label" for="is_published">Publish?</label>
-                    <input class="form-check-input" type="checkbox" id="is_published" name="is_published" {{$article->published_at ? 'checked' :''}}>
+                    <input class="form-check-input" type="checkbox" id="is_published" name="is_published"
+                        {{ $article->published_at ? 'checked' : '' }}>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Save</button>
             </form>

@@ -14,14 +14,16 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a class="btn btn-sm btn-outline-secondary" href="http://127.0.0.1:8000">home</a>
+                    <a style="background-color:#05648a" class="btn btn-sm btn-outline-secondary text-dark"
+                        href="http://127.0.0.1:8000">home</a>
                 </div>
                 <div class="col-4 text-center">
                     <a class="blog-header-logo text-dark" href="{{ Route('landing') }}">T1-2021110083</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
 
-                    <a class="btn btn-sm btn-outline-secondary" href="http://127.0.0.1:8000/articles/create">Tambah
+                    <a style="background-color:#05648a" class="btn btn-sm btn-outline-secondary text-dark"
+                        href="http://127.0.0.1:8000/articles/create">Tambah
                         Buku</a>
 
                 </div>
@@ -52,7 +54,7 @@
 
         <p style="color: black">Copyright © {{ date('Y') }}
             <a style="color: black" href="/">t1-2021110083</a> -
-            <a href="{{ route('contact-us.index') }}">Subscribe</a>
+            <a style="color: black" href="{{ route('contact-us.index') }}">Subscribe</a>
         </p>
         <p>
             <a style="color: black" href="#">Back to top</a>

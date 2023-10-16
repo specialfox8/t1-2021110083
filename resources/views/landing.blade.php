@@ -47,7 +47,7 @@
             <div>
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                        <h2 class="card-text mb-auto">No articles found.</h2>
+                        <h2 class="card-text mb-auto">No Book found.</h2>
                     </div>
                 </div>
             </div>

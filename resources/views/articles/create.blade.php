@@ -45,9 +45,6 @@
                         <option value="">Culinary</option>
                         <option value="">Comic</option>
                     </select>
-
-
-
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="penerbit" class="form-label">Penerbit</label>

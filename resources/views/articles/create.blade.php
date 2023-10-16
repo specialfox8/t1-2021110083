@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Add New Article')
+@section('title', 'Add New Books')
 
 @section('content')
     <div class="mt-4 p-5 bg-black text-white rounded">
@@ -17,39 +17,42 @@
         </div>
     @endif
 
-    <div class="row my-5">
+    <div class="row my-5 ">
         <div class="col-12 px-5">
             <form action="{{ route('articles.store') }}" method="POST">
                 @csrf
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="judul" class="form-label">Judul</label>
-                    <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul') }}">
+                    <input style="border: 2px solid Black" type="text" class="form-control" id="judul" name="judul"
+                        value="{{ old('judul') }}">
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="page" class="form-label">Halaman</label>
-                    <input class="form-control" type="text" id="page" name="page">
+                    <input style="border: 2px solid Black" class="form-control" type="number" id="page" name="page"
+                        min="0" max="1000">
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
-                    <form method="post">
-                        <label for="kategori">Kategori</label>
-                        <select name="kategori" id="kategori">
-                            <option value="uncategorized">Uncategorized</option>
-                            <option value="sci-fi">Science Fiction</option>
-                            <option value="novel">Novel</option>
-                            <option value="history">History</option>
-                            <option value="biography">Biography</option>
-                            <option value="romance">Romance</option>
-                            <option value="education">Education</option>
-                            <option value="culinary">Culinary</option>
-                            <option value="comic">Comic</option>
-                        </select>
 
-                    </form>
+                    <label for="kategori">Kategori</label method="post">
+                    <select name="kategori" id="kategori">
+                        <option value="uncategorized" selected>Uncategorized</option>
+                        <option value="">Science Fiction</option>
+                        <option value="">Novel</option>
+                        <option value="">History</option>
+                        <option value="">Biography</option>
+                        <option value="">Romance</option>
+                        <option value="">Education</option>
+                        <option value="">Culinary</option>
+                        <option value="">Comic</option>
+                    </select>
+
+
 
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="penerbit" class="form-label">Penerbit</label>
-                    <input type="text" class="form-control" id="penerbit" name="penerbit">
+                    <input style="border: 2px solid Black" type="text" class="form-control" id="penerbit"
+                        name="penerbit">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">Save</button>

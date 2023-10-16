@@ -14,37 +14,31 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    {{-- <a class="link-secondary" href="#">Subscribe</a> --}}
+                    <a class="btn btn-sm btn-outline-secondary" href="http://127.0.0.1:8000">home</a>
                 </div>
                 <div class="col-4 text-center">
                     <a class="blog-header-logo text-dark" href="{{ Route('landing') }}">T1-2021110083</a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
-                    <a class="link-secondary" href="#" aria-label="Search">
-                        {{-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
-                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            class="mx-3" role="img" viewBox="0 0 24 24">
-                            <title>Search</title>
-                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
-                            <path d="M21 21l-5.2-5.2"></path>
-                        </svg> --}}
-                    </a>
-                    <a class="btn btn-sm btn-outline-secondary" href="#">Tambah Buku</a>
+
+                    <a class="btn btn-sm btn-outline-secondary" href="http://127.0.0.1:8000/articles/create">Tambah
+                        Buku</a>
+
                 </div>
             </div>
         </header>
 
-        <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="#">Uncategorized</a>
-                <a class="p-2 link-secondary" href="#">Science Fiction</a>
-                <a class="p-2 link-secondary" href="#">Novel</a>
-                <a class="p-2 link-secondary" href="#">History</a>
-                <a class="p-2 link-secondary" href="#">Biography</a>
-                <a class="p-2 link-secondary" href="#">Romance</a>
-                <a class="p-2 link-secondary" href="#">Education</a>
-                <a class="p-2 link-secondary" href="#">Culinary</a>
-                <a class="p-2 link-secondary" href="#">Comic</a>
+        <div class="nav-scroller py-1 mb-3" style="background-color:#05648a">
+            <nav class="nav d-flex justify-content-between ">
+                <a class="p-2 link-secondary text-light" href="#">Uncategorized</a>
+                <a class="p-2 link-secondary text-light" href="#">Science Fiction</a>
+                <a class="p-2 link-secondary text-light" href="#">Novel</a>
+                <a class="p-2 link-secondary text-light" href="#">History</a>
+                <a class="p-2 link-secondary text-light" href="#">Biography</a>
+                <a class="p-2 link-secondary text-light" href="#">Romance</a>
+                <a class="p-2 link-secondary text-light" href="#">Education</a>
+                <a class="p-2 link-secondary text-light" href="#">Culinary</a>
+                <a class="p-2 link-secondary text-light" href="#">Comic</a>
             </nav>
         </div>
     </div>
@@ -53,13 +47,15 @@
         @yield('content')
     </main>
 
-    <footer class="blog-footer">
-        <p>Copyright © {{ date('Y') }}
-            {{-- <a href="/">t1-2021110083</a> - <a href="{{ route('contact-us.index') }}">Subscribe</a> --}}
-            <a href="/">t1-2021110083</a> - <a href="">Subscribe</a>
+
+    <footer class="blog-footer" style="background-color:#05648a">
+
+        <p style="color: black">Copyright © {{ date('Y') }}
+            <a style="color: black" href="/">t1-2021110083</a> -
+            <a href="{{ route('contact-us.index') }}">Subscribe</a>
         </p>
         <p>
-            <a href="#">Back to top</a>
+            <a style="color: black" href="#">Back to top</a>
         </p>
     </footer>
 

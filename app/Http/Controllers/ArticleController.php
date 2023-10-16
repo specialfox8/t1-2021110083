@@ -31,19 +31,20 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'judul' => 'required|string|min:3|max:255',
-            'page' => 'required|string'
-            'kategori' => 'required'
+            'judul' => 'required|string',
+            // 'halaman' => 'required|integer|min:0|max:1000',
+            // 'kategori' => 'required|StringLiteral',
             'penerbit' => 'required|string'
-
         ]);
 
 
         $article = Article::create([
-            'title' => $validated['title'],
-            'body' => $validated['body'],
-            'published_at' => $request->has('is_published') ? Carbon::now() : null,
-            'image' => $validated['image'] ?? null
+            // 'judul' => $validated['judul'],
+            // 'halaman' => $validated['halaman'],
+            // 'kategori' => $validated['kategori'],
+            // 'penerbit' => $validated['penerbit'],
+            // 'published_at' => $request->has('is_published') ? Carbon::now() : null,
+
         ]);
         return redirect()->route('articles.index')->with('success', 'Article Added.');
     }
@@ -70,15 +71,18 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $validated = $request->validate([
-            'title' => 'required|string|min:3|max:255',
-            'body' => 'required|string'
+            'judul' => 'required|string',
+            'halaman' => 'required|integer|min:0|max:1000',
+            // 'kategori' => 'required|StringLiteral',
+            'penerbit' => 'required|string'
         ]);
 
 
         $article->update([
-            'title' => $validated['title'],
-            'body' => $validated['body'],
-            'image' => $validated['image'] ?? $article->image,
+            'judul' => $validated['judul'],
+            // 'halaman' => $validated['halaman'],
+            // 'kategori' => $validated['kategori'],
+            'penerbit' => $validated['penerbit'],
             'published_at' => $request->is_published ? Carbon::now() : null
         ]);
 

@@ -5,17 +5,17 @@
 
 
 @section('content')
-    {{-- <div class="mt-4 p-5 bg-black text-white rounded">
-        <h1>All Books</h1> --}}
-    {{-- Add button --}}
-    {{-- <a href="{{ route('books.create') }}" class="btn btn-primary btn-sm">Add New Books</a>
-    </div> --}}
+    <div class="mt-4 p-5 bg-black text-white rounded">
+        <h1>All Books</h1>
+        Add button
+        <a href="{{ route('articles.create') }}" class="btn btn-primary btn-sm">Add New Books</a>
+    </div>
 
-    {{-- @if (session()->has('success'))
+    @if (session()->has('success'))
         <div class="alert alert-success mt-4">
             {{ session()->get('success') }}
         </div>F
-    @endif --}}
+    @endif
 
     <div class="container mt-5">
         <table class="table table-bordered mb-5">

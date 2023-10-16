@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->id('isbn');
+            $table->id('isbn', 13)->unique();
             $table->string('judul')->nullable();
             $table->integer('halaman')->default(0);
             $table->string('kategori')->default('uncategorized');

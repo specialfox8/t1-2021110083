@@ -35,13 +35,15 @@
                 @forelse ($articles as $article)
                     <tr>
                         <th scope="row">{{ $article->id }}</th>
-                        <td><a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a></td>
-                        <td>{{ Str::limit($article->body, 50, '...') }}</td>
+                        <td>{{ $article->judul, 50, '...' }}</a></td>
+                        <td>{{ $article->halaman }}</td>
+                        <td>{{ $article->kategori }}</td>
+                        <td>{{ $article->penulis }}</td>
                         <td>{{ $article->created_at }}</td>
                         <td>{{ $article->updated_at }}</td>
                         <td>
-                            <a href="{{ route('articles.edit', $article) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <form action="{{ route('articles.destroy', $article) }}" method="POST" class="d-inline-block">
+                            <a href="" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="" method="POST" class="d-inline-block">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm"

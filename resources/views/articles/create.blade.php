@@ -29,7 +29,7 @@
                 <div class="mb-3 col-md-12 col-sm-12">
                     <label for="page" class="form-label">Halaman</label>
                     <input style="border: 2px solid Black" class="form-control" type="number" id="page" name="page"
-                        min="0" max="1000">
+                        value="0">
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
 

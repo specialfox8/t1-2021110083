@@ -15,7 +15,7 @@ class Article extends Model
         'judul',
         'halaman',
         'kategori',
+        'published_at',
         'penerbit',
-        'published_at'
     ];
 }

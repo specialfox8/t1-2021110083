@@ -23,26 +23,17 @@
                 @method('PUT')
                 @csrf
                 <div class="mb-3 col-md-12 col-sm-12">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title"
-                        value="{{ old('title', $article->title) }}">
+                    <label for="judul" class="form-label">Judul</label>
+                    <input type="text" class="form-control" id="judul" name="judul"
+                        value="{{ old('judul', $article->judul) }}">
                 </div>
                 <div class="mb-3 col-md-12 col-sm-12">
-                    <label for="image" class="form-label">Image</label>
-                    <input class="form-control" type="file" id="image" name="image">
-                    @if ($article->image)
-                        <img src="{{ $article->image_url }}" class="mt-3" style="max-width: 400px">
-                    @endif
+                    <label for="page" class="form-label">Halaman</label>
+                    <input style="border: 2px solid Black" class="form-control" type="number" id="page" name="page"
+                        value="{{ old('page', $article->page) }}">
+
                 </div>
-                <div class="mb-3 col-md-12 col-sm-12">
-                    <label for="body" class="form-label">Body</label>
-                    <textarea class="form-control" rows="10" name="body">{{ old('body', $article->body) }}</textarea>
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <label class="form-check-label" for="is_published">Publish?</label>
-                    <input class="form-check-input" type="checkbox" id="is_published" name="is_published"
-                        {{ $article->published_at ? 'checked' : '' }}>
-                </div>
+
                 <button type="submit" class="btn btn-primary btn-block">Save</button>
             </form>
         </div>

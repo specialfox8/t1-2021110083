@@ -31,19 +31,19 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'judul' => 'required|string',
-            // 'halaman' => 'required|integer|min:0|max:1000',
-            // 'kategori' => 'required|StringLiteral',
+            'judul' => 'required|string|min:5|max:255',
+            'halaman' => 'integer',
+            'kategori' => 'required|String',
             'penerbit' => 'required|string'
         ]);
 
 
         $article = Article::create([
-            // 'judul' => $validated['judul'],
-            // 'halaman' => $validated['halaman'],
-            // 'kategori' => $validated['kategori'],
-            // 'penerbit' => $validated['penerbit'],
-            // 'published_at' => $request->has('is_published') ? Carbon::now() : null,
+            'judul' => $validated['judul'],
+            'halaman' => $validated['halaman'] ?? 0,
+            'kategori' => $validated['kategori'],
+            'penerbit' => $validated['penerbit'],
+            'published_at' => $request->has('is_published') ? Carbon::now() : null,
 
         ]);
         return redirect()->route('articles.index')->with('success', 'Article Added.');
@@ -71,19 +71,20 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $validated = $request->validate([
-            'judul' => 'required|string',
-            'halaman' => 'required|integer|min:0|max:1000',
-            // 'kategori' => 'required|StringLiteral',
+            'judul' => 'required|string|min:5|max:255',
+            'halaman' => 'integer',
+            'kategori' => 'required|String',
             'penerbit' => 'required|string'
         ]);
 
 
-        $article->update([
+        $article = Article::create([
             'judul' => $validated['judul'],
-            // 'halaman' => $validated['halaman'],
-            // 'kategori' => $validated['kategori'],
+            'halaman' => $validated['halaman'] ?? 0,
+            'kategori' => $validated['kategori'],
             'penerbit' => $validated['penerbit'],
-            'published_at' => $request->is_published ? Carbon::now() : null
+            'published_at' => $request->has('is_published') ? Carbon::now() : null,
+
         ]);
 
         return redirect()->route('articles.index')->with('success', 'Article update.');
